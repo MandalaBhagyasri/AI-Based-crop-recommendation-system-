@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart AI Crop Recommendation System</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🌱 CropAI</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="{{ url_for('home') }}" class="nav-link">Home</a></li>
+<li class="nav-item"><a href="{{ url_for('recommendation') }}" class="nav-link">Get Recommendation</a></li>
+<li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+<li class="nav-item"><a href="{{ url_for('contact') }}" class="nav-link">Contact</a></li>
+
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1 class="hero-title fade-in">Smart AI Crop Recommendation System</h1>
+            <p class="hero-subtitle fade-in">Harness the power of artificial intelligence to maximize your agricultural yield</p>
+            <div class="hero-buttons fade-in">
+                <a href="{{ url_for('recommendation') }}" class="btn btn-primary">Get Recommendation</a>
+                <a href="{{ url_for('about') }}" class="btn btn-secondary">Learn More</a>
+
+            </div>
+        </div>
+        <div class="hero-animation" id="lottie-hero"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Our AI System?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI-Powered Analysis</h3>
+                    <p>Advanced machine learning algorithms analyze soil and weather conditions</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌦️</div>
+                    <h3>Weather Integration</h3>
+                    <p>Real-time weather data integration for accurate recommendations</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Data Visualization</h3>
+                    <p>Interactive charts and graphs for better understanding</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Access the system from any device, anywhere</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Input Data</h3>
+                    <p>Enter soil parameters and weather conditions</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>AI Analysis</h3>
+                    <p>Our system processes the data using advanced algorithms</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Get Results</h3>
+                    <p>Receive personalized crop recommendations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 CropAI Recommendation System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="static/js/animations.js"></script>
+    <script src="static/js/script.js"></script>
+</body>
+</html>

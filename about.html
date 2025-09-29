@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Project - Smart AI Crop Recommendation System</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🌱 CropAI</h2>
+            </div>
+            <ul class="nav-menu">
+    <li class="nav-item"><a href="{{ url_for('home') }}" class="nav-link">Home</a></li>
+    <li class="nav-item"><a href="{{ url_for('recommendation') }}" class="nav-link">Get Recommendation</a></li>
+    <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link active">About</a></li>
+    <li class="nav-item"><a href="{{ url_for('contact') }}" class="nav-link">Contact</a></li>
+</ul>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1 class="fade-in">About Our AI Crop Recommendation System</h1>
+            <p class="fade-in">Revolutionizing agriculture through artificial intelligence and data-driven insights</p>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="project-overview" style="padding: 100px 0; background: #f8f9fa;">
+        <div class="container">
+            <div class="overview-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+                <div class="overview-text">
+                    <h2 style="color: #2d5016; margin-bottom: 20px;">Project Overview</h2>
+                    <p style="margin-bottom: 20px; font-size: 1.1em;">The AI-Based Crop Recommendation System is an innovative solution designed to help farmers make informed decisions about crop selection based on their specific agricultural conditions.</p>
+                    <p style="font-size: 1.1em;">By leveraging machine learning algorithms and comprehensive agricultural data, our system provides personalized recommendations that can significantly improve crop yield and sustainability.</p>
+                </div>
+                <div class="overview-image">
+                    <div id="lottie-about" style="width: 100%; height: 300px;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="technology" style="padding: 100px 0;">
+        <div class="container">
+            <h2 class="section-title">Technology Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">🤖</div>
+                    <h3>Machine Learning</h3>
+                    <p>Random Forest algorithm trained on agricultural datasets with 95% accuracy</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">💻</div>
+                    <h3>Backend</h3>
+                    <p>Python Flask framework with RESTful API endpoints</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🎨</div>
+                    <h3>Frontend</h3>
+                    <p>HTML5, CSS3, JavaScript with modern responsive UI/UX</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">📊</div>
+                    <h3>Data Visualization</h3>
+                    <p>Chart.js for interactive data representation and analysis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline-section" style="padding: 100px 0; background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Project Development Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Phase 1</div>
+                    <div class="timeline-content" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <h3>Research & Data Collection</h3>
+                        <p>Gathered agricultural datasets and researched crop requirements across different regions</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Phase 2</div>
+                    <div class="timeline-content" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <h3>ML Model Development</h3>
+                        <p>Developed and trained the Random Forest classification model with hyperparameter tuning</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Phase 3</div>
+                    <div class="timeline-content" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <h3>Backend API</h3>
+                        <p>Built Flask backend with recommendation endpoints and data validation</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Phase 4</div>
+                    <div class="timeline-content" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <h3>Frontend Development</h3>
+                        <p>Created responsive UI with interactive features and modern design</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Phase 5</div>
+                    <div class="timeline-content" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <h3>Testing & Deployment</h3>
+                        <p>Comprehensive testing and deployment preparation with CI/CD pipeline</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="team" style="padding: 100px 0;">
+        <div class="container">
+            <h2 class="section-title">Our Mission</h2>
+            <div class="mission-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.2em; margin-bottom: 30px;">We believe that technology can play a crucial role in sustainable agriculture. Our mission is to empower farmers with AI-driven insights that help them:</p>
+                <ul style="list-style: none; text-align: left; display: inline-block;">
+                    <li style="margin-bottom: 15px; font-size: 1.1em;">✅ Increase crop yields through optimal crop selection</li>
+                    <li style="margin-bottom: 15px; font-size: 1.1em;">✅ Reduce resource waste with precise recommendations</li>
+                    <li style="margin-bottom: 15px; font-size: 1.1em;">✅ Adapt to changing climate conditions</li>
+                    <li style="margin-bottom: 15px; font-size: 1.1em;">✅ Make data-driven farming decisions</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌱 CropAI</h3>
+                    <p>Smart agricultural solutions powered by artificial intelligence for modern farming.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="recommendation.html">Get Recommendation</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: info@cropai.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CropAI Recommendation System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script>
+    <script>
+        // Lottie animation for about page
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById('lottie-about')) {
+                lottie.loadAnimation({
+                    container: document.getElementById('lottie-about'),
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    path: 'https://assets1.lottiefiles.com/packages/lf20_6a7maf.json'
+                });
+            }
+        });
+    </script>
+    <script src="static/js/script.js"></script>
+</body>
+</html>

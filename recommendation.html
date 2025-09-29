@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Crop Recommendation - Smart AI System</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🌱 CropAI</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="{{ url_for('home') }}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{{ url_for('recommendation') }}" class="nav-link">Get Recommendation</a></li>
+                <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="{{ url_for('contact') }}" class="nav-link active">Contact</a></li>
+            </ul>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Recommendation Hero Section -->
+    <section class="recommendation-hero">
+        <div class="container">
+            <h1 class="fade-in">Get AI Crop Recommendation (AI పంట సూచన పొందండి)</h1>
+            <p class="fade-in">Enter your agricultural parameters (మీ వ్యవసాయ పరామితులను నమోదు చేయండి)</p>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section">
+        <div class="container">
+            <div class="form-container fade-in">
+                <h1 style="text-align: center; color: #2d5016; margin-bottom: 30px;">Crop Recommendation Analysis (పంట సూచన విశ్లేషణ)</h1>
+                <p style="text-align: center; margin-bottom: 30px; color: #666;">Adjust the sliders (స్లైడర్లను సర్దుబాటు చేయండి)</p>
+                
+                <form id="recommendation-form">
+                    <div class="form-group">
+                        <label class="form-label">Nitrogen (N) - నైట్రోజన్ (N) <span id="nitrogen-value">50</span> ppm</label>
+                        <input type="range" id="nitrogen" name="nitrogen" min="0" max="140" value="50" class="form-input">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.8em; color: #666;">
+                            <span>0 ppm (Low / తక్కువ)</span>
+                            <span>140 ppm (High / ఎక్కువ)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Phosphorus (P) - ఫాస్పరస్ (P) <span id="phosphorus-value">50</span> ppm</label>
+                        <input type="range" id="phosphorus" name="phosphorus" min="5" max="145" value="50" class="form-input">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.8em; color: #666;">
+                            <span>5 ppm (Low / తక్కువ)</span>
+                            <span>145 ppm (High / ఎక్కువ)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Potassium (K) - పొటాషియం (K) <span id="potassium-value">50</span> ppm</label>
+                        <input type="range" id="potassium" name="potassium" min="5" max="205" value="50" class="form-input">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.8em; color: #666;">
+                            <span>5 ppm (Low / తక్కువ)</span>
+                            <span>205 ppm (High / ఎక్కువ)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Temperature - ఉష్ణోగ్రత <span id="temperature-value">25</span> °C</label>
+                        <input type="range" id="temperature" name="temperature" min="8" max="44" step="0.1" value="25" class="form-input">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.8em; color: #666;">
+                            <span>8°C (Cool / చల్లగా)</span>
+                            <span>44°C (Hot / వేడిగా)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Humidity - తేమ <span id="humidity-value">50</span> %</label>
+                        <input type="range" id="humidity" name="humidity" min="14" max="100" step="0.1" value="50" class="form-input">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.8em; color: #666;">
+                            <span>14% (Dry / పొడి)</span>
+                            <span>100% (Humid / తేమగా)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">pH Level - పిహెచ్ స్థాయి <span id="ph-value">6.5</span></label>
+                        <input type="range" id="ph" name="ph" min="3.5" max="10" step="0.1" value="6.5" class="form-input">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.8em; color: #666;">
+                            <span>3.5 (Acidic / ఆమ్లం)</span>
+                            <span>10 (Alkaline / క్షార)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Rainfall - వర్షపాతం <span id="rainfall-value">100</span> mm</label>
+                        <input type="range" id="rainfall" name="rainfall" min="20" max="300" step="1" value="100" class="form-input">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.8em; color: #666;">
+                            <span>20 mm (Low / తక్కువ)</span>
+                            <span>300 mm (High / ఎక్కువ)</span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.1em;">
+                        Get AI Recommendation (AI పంట సూచన పొందండి)
+                    </button>
+                </form>
+                
+                <div id="loading-spinner" class="hidden" style="text-align: center; margin-top: 30px;">
+                    <div class="spinner"></div>
+                    <p style="margin-top: 15px; color: #4a7c2a; font-weight: 600;">
+                        AI is analyzing your soil and weather conditions... 
+                        (AI మీ నేల మరియు వాతావరణ పరిస్థితులను విశ్లేషిస్తోంది...)
+                    </p>
+                </div>
+            </div>
+
+            <div id="result-section" class="hidden">
+                <div id="result-content"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌱 CropAI</h3>
+                    <p>Smart agricultural solutions powered by AI (కృత్రిమ మేధస్సుతో ఆధునిక వ్యవసాయం).</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home (హోమ్)</a></li>
+                        <li><a href="recommendation.html">Get Recommendation (సూచన పొందండి)</a></li>
+                        <li><a href="about.html">About (గురించి)</a></li>
+                        <li><a href="contact.html">Contact (సంప్రదించండి)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info (సంప్రదించండి)</h4>
+                    <p>Email: info@cropai.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CropAI Recommendation System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="static/js/script.js"></script>
+    <script>
+        // Update slider values in real-time
+        const sliders = ['nitrogen', 'phosphorus', 'potassium', 'temperature', 'humidity', 'ph', 'rainfall'];
+        
+        sliders.forEach(sliderId => {
+            const slider = document.getElementById(sliderId);
+            const valueDisplay = document.getElementById(sliderId + '-value');
+            
+            if (slider && valueDisplay) {
+                valueDisplay.textContent = slider.value;
+                slider.addEventListener('input', function() {
+                    valueDisplay.textContent = this.value;
+                });
+            }
+        });
+
+        // Form submission
+        document.getElementById('recommendation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                N: parseInt(document.getElementById('nitrogen').value),
+                P: parseInt(document.getElementById('phosphorus').value),
+                K: parseInt(document.getElementById('potassium').value),
+                temperature: parseFloat(document.getElementById('temperature').value),
+                humidity: parseFloat(document.getElementById('humidity').value),
+                ph: parseFloat(document.getElementById('ph').value),
+                rainfall: parseFloat(document.getElementById('rainfall').value)
+            };
+            
+            document.getElementById('loading-spinner').classList.remove('hidden');
+            document.getElementById('recommendation-form').style.display = 'none';
+            
+            setTimeout(() => {
+                const mockResponse = {
+                    crop: "Wheat (గోధుమలు)",
+                    confidence: 92.5,
+                    probability: 0.925,
+                    season: "Rabi (October-November) (రబీ కాలం - అక్టోబర్-నవంబర్)",
+                    duration: "120-150 days (రోజులు)",
+                    water_requirement: "Medium (మధ్యస్థం)",
+                    soil_type: "Well-drained loamy soil (బాగా నీరు పారే లోమీ మట్టి)",
+                    ideal_temp: "10-25°C (ఉష్ణోగ్రత)",
+                    ideal_rainfall: "50-100 cm (వర్షపాతం)",
+                    tips: [
+                        "Sow at proper time to avoid heat stress (సరైన సమయంలో విత్తనం వేయండి)",
+                        "Use certified seeds for better yield (మెరుగైన దిగుబడికి ధృవీకరించబడిన విత్తనాలు వాడండి)",
+                        "Apply irrigation at critical growth stages (ముఖ్య దశలలో నీటిపారుదల ఇవ్వండి)",
+                        "Control rust diseases effectively (తుప్పు వ్యాధులను నియంత్రించండి)"
+                    ],
+                    input_parameters: formData
+                };
+                
+                sessionStorage.setItem('cropRecommendationResult', JSON.stringify(mockResponse));
+                window.location.href = "{{ url_for('result') }}";
+            }, 2000);
+        });
+
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+        <!-- Chatbot -->
+    <div id="chatbot-button">💬</div>
+    <div id="chatbot-container" class="hidden">
+        <div id="chatbot-header">
+            <span>CropAI Chatbot (చాట్‌బాట్)</span>
+            <button id="chatbot-close">×</button>
+        </div>
+        <div id="chatbot-messages"></div>
+        <div id="chatbot-input">
+            <input type="text" id="chatbot-text" placeholder="Type your question... (మీ ప్రశ్న టైప్ చేయండి)" />
+            <button id="chatbot-send">Send</button>
+        </div>
+    </div>
+
+    <!-- Keep this at the very end -->
+    <script src="static/js/script.js"></script>
+</body>
+</html>
+
+</body>
+</html>
